@@ -1,0 +1,66 @@
+body {
+    background: rgba(0, 0, 0, 0) url("/img/bottom-bg.jpg") repeat scroll 0 0;
+    /*background: rgba(0, 0, 0, 0) url("/img/bg.jpg") repeat scroll 0 0;*/
+    font-family: "RobotoRegular", sans-serif !important;
+    color: #727476;    
+    line-height: 1.42857;
+}
+
+/******adminka******/
+.adminka .navbar{
+    height: 0;
+    min-height: 28px;
+    z-index: 1;
+    margin-bottom: 0;
+}
+.adminka .navbar-nav a{    
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.adminka .navbar-text{
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+/******adminka the end******/
+
+#main{
+    width: 990px;
+    margin: 0 auto;
+}
+
+.block{
+    background: #ffffff none repeat scroll 0 0 padding-box;
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 4px;
+    padding: 10px;
+}
+
+.myBtnSearch{
+    background-position: 0 -50px;
+    border-color: #cfcfcf #cfcfcf #b5b5b5;
+    border-radius: 2px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: rgba(0, 0, 0, 0) url("../img/button_more.png") repeat-x scroll 0 0;
+    /*border-color: #d9d9d9 #d9d9d9 #bfbfbf;*/
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 1) inset, 0 1px 1px rgba(0, 0, 0, 0.05);
+    color: #777;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 7px 16px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+}
+.myBtnSearch:hover{
+    background-position: 0 0;
+}

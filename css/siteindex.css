@@ -1,0 +1,67 @@
+.title{
+    text-transform: uppercase;
+    color: #2570bb;
+    padding: 5px 0;
+    border-top: 1px solid #ddd;
+}
+.text{
+    color: #444;
+    font-size: 90%;
+}
+.entre .title:first-child{
+    border: none;
+}
+
+.r3{
+    height: 260px;
+}
+.dReadMore{
+    text-align: right;
+    margin-top: 18px;
+}
+.dImg{
+    margin: 5px 0;
+}
+.dImg img{
+    width: 222px;
+    height: auto;
+    margin: 0;
+    float: none !important;
+}
+
+
+
+.block3{
+    height: 90px;
+    width: 100%;
+}
+
+.prev {
+    background: rgba(0, 0, 0, 0) url("../img/buttons.png") no-repeat scroll 0 0;
+    height: 25px;
+    background-position: 0 0;
+    left: 15px;
+    /*margin-top: -12px;
+    top: 50%;*/
+    width: 25px;
+    /*float: left;*/
+}
+.prev:hover{
+    background-position: 0 -30px;
+}
+.next {
+    background: rgba(0, 0, 0, 0) url("../img/buttons.png") no-repeat scroll 0 0;
+    background-position: 0 -90px;
+    height: 25px;
+    width: 25px;
+}
+.next:hover{
+    background-position: 0 -120px;
+}
+
+.cur>div:first-child{
+    border-right: 1px solid #ddd;
+}
+.cur>div:last-child{
+    border-left: 1px solid #ddd;
+}
