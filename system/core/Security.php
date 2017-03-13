@@ -1,5 +1,5 @@
 <?php
-/**
+/** stroka 839
  * CodeIgniter
  *
  * An open source application development framework for PHP
@@ -836,9 +836,13 @@ class CI_Security {
 			'plaintext', 'style', 'script', 'textarea', 'title', 'math', 'video', 'svg', 'xml', 'xss'
 		);
 
-		static $evil_attributes = array(
+		/*static $evil_attributes = array(
 			'on\w+', 'style', 'xmlns', 'formaction', 'form', 'xlink:href', 'FSCommand', 'seekSegmentTime'
-		);
+		);*/
+
+        static $evil_attributes = array(
+            'on\w+', 'xmlns', 'formaction', 'form', 'xlink:href', 'FSCommand', 'seekSegmentTime'
+        );
 
 		// First, escape unclosed tags
 		if (empty($matches['closeTag']))

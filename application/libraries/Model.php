@@ -4,7 +4,7 @@ class Model{
 
     public static function read($table, $arr = false){
         /* по умолчанию показывает первую строку
-         * Пр: $model = Model::read('contant', ['orderBy' => 'id asc']);
+         * Пр: $model = Model::read('contant', ['orderBy' => 'id asc']); desc
          * Пр: $model = Model::read('contant', ['where' => ['id' => 8], 'column' => ['id', 'dataC']]);
          * */
         $CI = &get_instance();

@@ -1,25 +1,53 @@
+<style>
+    .even{
+        background-color: rgb(242, 240, 255);
+    }
+    .even:hover{
+        background-color: rgb(236, 234, 249) !important;
+    }
+    .other i:first-child{margin-right: 2px;}
+    .other i{cursor: pointer; opacity: .5; font-size: 120% !important;}
+    .other i:hover{opacity: 1;}
+</style>
+
 <div ng-controller="contentIndCtrl">
+    <div style="position: absolute; top: 6px; right: 476px;">
+        <select class="form-control input-sm" style="width: 156px;" ng-model="filterMenu" ng-options="item.name for item in arr.menu track by item.id" ng-change="selFilterMenu(filterMenu)">
+            <option value="">Фильтр по меню...</option>
+        </select>
+    </div>
+
+    <div style="position: absolute; top: 6px; right: 308px;">
+        <select class="form-control input-sm" style="width: 156px;" ng-model="filterItems" ng-options="item.name for item in arr.items | filter:{menuId: menuId}:true track by item.id">
+            <option value="">Фильтр по пункту...</option>
+        </select>
+    </div>
+
+    <div style="position: absolute; top: 6px; right: 106px;">
+        <input type="text" class="form-control input-sm" style="width: 190px;" placeholder="Фильтр по названию..." ng-model="filterTitle">
+    </div>
+
     <div style="position: absolute; top: 6px; right: 24px;">
         <button class="btn btn-default btn-sm" type="submit" ng-click="create()">Создать</button>
     </div>
 
-    <style>
-        .even{
-            background-color: rgb(242, 240, 255);
-        }
-        .even:hover{
-            background-color: rgb(236, 234, 249) !important;
-        }
-        .other i:first-child{margin-right: 2px;}
-        .other i{cursor: pointer; opacity: .5; font-size: 120% !important;}
-        .other i:hover{opacity: 1;}
-    </style>
-
     <div class="row">
         <div class="col-xs-12">
             <table ng-init='content=<?=$content?>' class="table table-hover table-striped">
+                <tr>
+                    <th>вкл</th>
+                    <th>слд</th>
+                    <th>Название статьи</th>
+                    <th></th>
+                </tr>
+
                 <tr ng-repeat="item in content | filter:{title: filterTitle} | filter:{menuId: filterMenu.id}:true | filter:{itemId: filterItems.id}:true" ng-class-even="'even'">
-                    <td style="width: 30px;"><input type="checkbox" style="margin: 0;" ng-model="item.status" ng-true-value="1" ng-false-value="0" ng-change="changeOnOff(item.id, item.status)"></td>
+                    <td style="width: 30px;">
+                        <input type="checkbox" style="margin: 0;" ng-model="item.status" ng-true-value="1" ng-false-value="0" ng-change="changeStatus(item.id, item.status)">
+                    </td>
+                    <td style="width: 30px;">
+                        <input type="checkbox" style="margin: 0;" ng-model="item.slider" ng-true-value="1" ng-false-value="0" ng-change="changeSlider(item.id, item.slider)">
+                    </td>
                     <td>{{item.title}}</td>
                     <td class="other" style="width: 80px;">
                         <i class="fa fa-eye" aria-hidden="true" ng-click="view(item.id)"></i>

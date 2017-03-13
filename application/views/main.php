@@ -15,7 +15,8 @@
 
 	<link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"/>
 
-	<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+	<!--<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>-->
+	<script src="/js/lib/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 	<script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
 	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/bower_components/toastr/toastr.min.js"></script>
@@ -34,7 +35,7 @@
 
 <?=isset($adminBar)?$adminBar:false?>
 
-<div style="font-size: 70%; text-align: right;">Page rendered in <strong>{elapsed_time}</strong> seconds.</div>
+<!--<div style="font-size: 70%; text-align: right;">Page rendered in <strong>{elapsed_time}</strong> seconds.</div>-->
 
 <div id="main" ng-init='arr.menu=<?=$menu?>; arr.items=<?=$items?>'>
 
@@ -49,7 +50,7 @@
 
 					<div class="col-xs-9" style="padding-right: 2px;">
 						<div class="panel panel-default block" style="position: relative; padding: 0;">
-			                <div class="panel-heading"><?=$this->title?></div>
+			                <div class="panel-heading" style="color: #6b6b6b;"><?=$this->title?></div>
 			                <div class="panel-body">
 			                    <?=$content?>
 			                </div>  

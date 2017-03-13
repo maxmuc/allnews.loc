@@ -206,10 +206,12 @@ app.controller('contentIndCtrl', ['$scope', function($scope){
         height: 200,
         plugins: 'link textcolor colorpicker image code table media nonbreaking emoticons hr',
         toolbar: 'undo redo | bold italic removeformat | alignleft aligncenter alignright alignjustify | bullist numlist | link image | hr | code',
-        /*file_browser_callback: RoxyFileBrowser,*/
-        menubar: false/*,
-         extended_valid_elements : 'specialist[title],feedback'
+        file_browser_callback: RoxyFileBrowser,
+        menubar: false,
+        convert_urls : false,
+        extended_valid_elements : "img[src|width|style|height|align],script"
          //<feedback></feedback>*/
+    //<img style="float: left;" src="../img/content/1441271881_11345.jpg" alt="" width="407" height="305" />
     };
 
     $scope.modalChangeMenu = function(item){
@@ -312,4 +314,46 @@ app.controller('contentIndCtrl', ['$scope', function($scope){
         $scope.modalArr = {};
         $scope.modal = false;
     };
+
+    $scope.changeStatus = function(id, status){
+        var data = {id: id, status: status};
+        $scope.http.post('/content/status', data);
+    };
+
+    $scope.changeSlider = function(id, slider){
+        var data = {id: id, slider: slider};
+        $scope.http.post('/content/slider', data);
+    };
+
+    $scope.selFilterMenu = function(item){
+        if(item == null)
+            $scope.menuId = false;
+        else
+            $scope.menuId = item.id;
+    };
 }]);
+
+function RoxyFileBrowser(field_name, url, type, win) {
+    var roxyFileman = '/js/lib/fileman/index.html';
+    if (roxyFileman.indexOf("?") < 0) {
+        roxyFileman += "?type=" + type;
+    }
+    else {
+        roxyFileman += "&type=" + type;
+    }
+    roxyFileman += '&input=' + field_name + '&value=' + win.document.getElementById(field_name).value;
+    if(tinyMCE.activeEditor.settings.language){
+        roxyFileman += '&langCode=' + tinyMCE.activeEditor.settings.language;
+    }
+    tinyMCE.activeEditor.windowManager.open({
+        file: roxyFileman,
+        title: 'Roxy Fileman',
+        width: 850,
+        height: 650,
+        resizable: "yes",
+        plugins: "media",
+        inline: "yes",
+        close_previous: "no"
+    }, {     window: win,     input: field_name    });
+    return false;
+}

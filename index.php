@@ -1,6 +1,10 @@
 <?php
 /**
  * CodeIgniter
+ * http://ru.euronews.com/2017/03/12/ed-sheeran-multiplies-chart-domination-with
+ * https://www.unian.net/science/1816841-uchenyie-nauchilis-hranit-informatsiyu-v-odnom-atome.html
+ * http://pravdoryb.info/index.html
+ *
  *
  * An open source application development framework for PHP
  *
