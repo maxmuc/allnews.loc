@@ -41,6 +41,26 @@ class Content extends MY_Controller {
             //$post = array_merge($arr['form'], ['img' => $nameImg[1]]);
         }
 
+        //2-политика
+        if($arr['form']['itemId'] == '2' && !empty($arr['form']['text'])){
+            $this->load->helper('simple_html_dom');
+            $html = str_get_html($arr['form']['text']);
+            $e = $html->find('img', 0)->src;
+            preg_match('|.*/(.*)$|', $e, $nameImg);
+            $this->load->helper('resize_crop');
+            createThumbnail('img/content/'.$nameImg[1], 'img/content/thumb/'.$nameImg[1], 216, 120);
+        }
+
+        //4-Экономика, 5-Наука и IT
+        if($arr['form']['itemId'] == '4' || $arr['form']['itemId'] == '5' && !empty($arr['form']['text'])){
+            $this->load->helper('simple_html_dom');
+            $html = str_get_html($arr['form']['text']);
+            $e = $html->find('img', 0)->src;
+            preg_match('|.*/(.*)$|', $e, $nameImg);
+            $this->load->helper('resize_crop');
+            createThumbnail('img/content/'.$nameImg[1], 'img/content/thumb/'.$nameImg[1], 228, 120);
+        }
+
         $arr['form']['url'] = translit($arr['form']['title']);
         if(isset($arr['form']['id'])){
             $id = $arr['form']['id'];

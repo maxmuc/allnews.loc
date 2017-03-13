@@ -2,8 +2,7 @@ body {
     background: rgba(0, 0, 0, 0) url("/img/bottom-bg.jpg") repeat scroll 0 0;
     /*background: rgba(0, 0, 0, 0) url("/img/bg.jpg") repeat scroll 0 0;*/
     font-family: "RobotoRegular", sans-serif !important;
-    color: #727476;    
-    line-height: 1.42857;
+    color: #727476;
 }
 
 /******adminka******/
@@ -93,4 +92,25 @@ body {
     border-color: #cfcfcf #cfcfcf #b5b5b5;
     /*border-color: #a2a2a2 #cfcfcf #cfcfcf;*/
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.weather{
+    background: #317ac4 url("../img/module_box_color.png") repeat-x scroll 0 0;
+    border: 1px solid #245b92;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+.SinoptikInformer .siBody{
+    background: none;
+}
+
+.siCityName11{
+    /*margin: 1px 0;*/
+}
+
+.siCityName11 a{
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }

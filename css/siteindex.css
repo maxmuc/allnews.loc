@@ -60,31 +60,9 @@
     margin: 5px 0;
 }
 .dImg img{
-    width: 224px;
     height: auto;
     margin: 0;
     float: none !important;
-}
-
-.weather{
-    background: #317ac4 url("../img/module_box_color.png") repeat-x scroll 0 0;
-    border: 1px solid #245b92;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    padding: 0;
-}
-.SinoptikInformer .siBody{
-    background: none;
-}
-
-.siCityName11{
-    /*margin: 1px 0;*/
-}
-
-.siCityName11 a{
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .block3{

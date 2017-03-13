@@ -57,12 +57,29 @@
 			            </div>
 					</div>
 					<div class="col-xs-3" style="padding-left: 2px;">
-						<div class="panel panel-default block" style="position: relative; padding: 0;">
-			                <div class="panel-heading"><?=$this->title?></div>
-			                <div class="panel-body">
-			                  	sideBar
-			                </div>  
-			            </div>
+                        <div class="block">
+                            <div class="zag">Курсы <span>валют</span></div>
+
+                            <div style="margin: 10px 0;">
+                                <!--Kurs.com.ua main-ukraine 200x130 blue-->
+                                <div id='kurs-com-ua-informer-main-ukraine-200x130-blue-container'><a href="//kurs.com.ua/informer" id="kurs-com-ua-informer-main-ukraine-200x130-blue" title="Курс валют информер Украина" target="_blank">Информер курса валют</a></div>
+                                <script type='text/javascript'>
+                                    (function() {var iframe = '<ifr'+'ame src="//kurs.com.ua/informer/inf2?color=blue" width="216" height="130" frameborder="0" vspace="0" scrolling="no" hspace="0"></ifr'+'ame>';var container = document.getElementById('kurs-com-ua-informer-main-ukraine-200x130-blue');container.parentNode.innerHTML = iframe;})();
+                                </script>
+                                <noscript><img src='//kurs.com.ua/static/images/informer/kurs.png' width='52' height='26' alt='kurs.com.ua: курс валют в Украине!' title='Курс валют' border='0' /></noscript>
+                                <!--//Kurs.com.ua main-ukraine 200x130 blue-->
+                            </div>
+                        </div>
+
+                        <div class="block weather">
+                            <div id="SinoptikInformer" style="width:244px;" class="SinoptikInformer type2c1">
+                                <div class="siBody1">
+                                    <table style="width: 100%;">
+                                        <tbody><tr><td class="siCityV11" style="width:100%;"><div class="siCityName11"><a onmousedown="siClickCount();" href="https://sinoptik.ua/погода-геническ" target="_blank" style="font-size: 110% !important;">Погода в <span style="font-size: 110% !important;">Геническе</span></a></div></tr><tr><td style="width:100%;"><div class="siCityV211"><div id="siCont0" class="siBodyContent"><div class="siLeft"><div class="siTerm"></div><div class="siT" id="siT0" style="color: #fff !important;"></div><div id="weatherIco0"></div></div><div class="siInf" style="width: 102px !important;"><p style="color: #fff !important; font-size: 110% !important;">влажность: <span id="vl0" style="color: #fff !important; font-size: 110% !important;"></span></p><p style="color: #fff !important; font-size: 110% !important;">давление: <span id="dav0" style="color: #fff !important;"></span></p><p style="color: #fff !important; font-size: 110% !important;">ветер: <span id="wind0" style="color: #fff !important;"></span></p></div></div></div></td></tr></tbody></table>
+                                </div>
+                            </div>
+                            <script type="text/javascript" charset="UTF-8" src="//sinoptik.ua/informers_js.php?title=3&amp;wind=3&amp;cities=303005243&amp;lang=ru"></script>
+                        </div>
 					</div>
 
 				<?php else: ?>

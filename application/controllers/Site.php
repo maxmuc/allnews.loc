@@ -16,6 +16,29 @@ class Site extends MY_Controller {
 		//curious
 		$data['curious'] = Model::readAll('content', ['where' => ['itemId' => 6], 'orderBy' => 'id DESC', 'limit' => '4']);
 
+        $data['politics'] = Model::read('content', ['where' => ['itemId' => 2], 'orderBy' => 'id DESC']);
+
+        $this->load->helper('simple_html_dom');
+        $html = str_get_html($data['politics']['text']);
+        $e = $html->find('img', 0)->src;
+        preg_match('|.*/(.*)$|', $e, $nameImg);
+        $data['politics']['img'] = '<img src="img/content/thumb/'.$nameImg[1].'">';
+
+        /***********/
+        $data['sport'] = Model::read('content', ['where' => ['itemId' => 4], 'orderBy' => 'id DESC']);
+
+        $html = str_get_html($data['sport']['text']);
+        $e = $html->find('img', 0)->src;
+        preg_match('|.*/(.*)$|', $e, $nameImg);
+        $data['sport']['img'] = '<img src="img/content/thumb/'.$nameImg[1].'">';
+
+        /***********/
+        $data['it'] = Model::read('content', ['where' => ['itemId' => 5], 'orderBy' => 'id DESC']);
+        $html = str_get_html($data['it']['text']);
+        $e = $html->find('img', 0)->src;
+        preg_match('|.*/(.*)$|', $e, $nameImg);
+        $data['it']['img'] = '<img src="img/content/thumb/'.$nameImg[1].'">';
+
 		$this->render('index', $data);
 	}
 

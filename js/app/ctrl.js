@@ -205,7 +205,7 @@ app.controller('contentIndCtrl', ['$scope', function($scope){
     $scope.tinymceOptions = {
         height: 200,
         plugins: 'link textcolor colorpicker image code table media nonbreaking emoticons hr',
-        toolbar: 'undo redo | bold italic removeformat | alignleft aligncenter alignright alignjustify | bullist numlist | link image | hr | code',
+        toolbar: 'undo redo | bold italic removeformat | alignleft aligncenter alignright alignjustify | bullist numlist | link image media | hr | code',
         file_browser_callback: RoxyFileBrowser,
         menubar: false,
         convert_urls : false,
