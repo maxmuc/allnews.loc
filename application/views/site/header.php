@@ -1,3 +1,4 @@
+<script type='text/javascript' src='/js/lib/marquee.js'></script>
 <style type="text/css">
     /***********nav***************/
     .loginMenu{
@@ -43,7 +44,23 @@
         color: #fff;
     }
 /***********mainMenu The End*********/
+.marquee {
+  width: 735px;
+  overflow: hidden;
+  /*border: 1px solid #ccc;
+  background: #ccc;*/
+  display: inline-block;
+}
 </style>
+
+<script>	
+	$(document).ready(function () {
+		$('.marquee').marquee({
+    		//speed in milliseconds of the marquee
+    		duration: 10000
+    	});
+	});	
+</script>
 
 <table style="width: 100%;">
     <tr>
@@ -63,7 +80,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div class="block">
+            <div class="block" style="padding-bottom: 0px;">
                 <div class="loginMenu">
                     <ul>
                         <?php if(!Ci::user()): ?>
@@ -88,7 +105,14 @@
                 </ul>
 
                 <div style="padding: 0 4px;">
-                    <div style="display: inline;">Главная » </div>
+                    <div class="marquee">                    
+							<?php foreach(Model::readAll('content', ['where' => ['itemId' => 9], 'column' => ['title', 'url'], 'limit' => 5]) as $row): ?>                    	
+                        	<a href="<?=$row['url']?>"><?=$row['title']?></a>
+                    
+                    	<?php endforeach; ?>                    	
+                    </div>
+                    	
+                      
                     <div style="float: right;"><?=allNewsTime()?> <span ng-bind="theTime"></span></div>
                 </div>
             </div>

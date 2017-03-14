@@ -33,8 +33,9 @@
 
 <script type="text/javascript" src="js/lib/jssor.slider.mini.js"></script>
 <script>
+    jQuery.noConflict();
     jQuery(document).ready(function ($) {
-
+        //jQuery('.marquee1').marquee(); 
         var jssor_1_options = {
             $AutoPlay: true,
             $AutoPlaySteps: 1,

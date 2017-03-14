@@ -15,8 +15,8 @@
 
 	<link href="/bower_components/toastr/toastr.min.css" rel="stylesheet"/>
 
-	<!--<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>-->
-	<script src="/js/lib/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+	<!--<script src="/js/lib/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>-->
 	<script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
 	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/bower_components/toastr/toastr.min.js"></script>
@@ -28,7 +28,8 @@
 	<script src="/bower_components/angular-ui-sortable/sortable.min.js"></script>
 	<script src="/bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
 	<script src="/js/app/app.js"></script>
-	<script src="/js/app/ctrl.js"></script>
+	<script src="/js/app/ctrl.js"></script>	
+</script>
 
 </head>
 <body <?=isset($adminBar)?'style="margin-top: 28px;"':false?>>
