@@ -56,4 +56,32 @@ class Site extends MY_Controller {
         $this->title = $data['content']['title'];
         $this->render('view', $data);
     }
+
+    public function search(){
+        $this->title = 'Поиск по сайту';
+        $this->sideBar = true;
+
+        if($_GET){
+            $search = $this->input->get('search');
+            //print_r($search);
+            if(empty($search))
+                $model = 'Ошибка! Поиск не задан. В Вашем запросе не указаны данные.';
+            else
+                $model = Model::readAll('content', ['or_like' => ['title' => $search, 'textnotag' => $search]]);
+
+            if(!$model)
+                $model = 'По Вашему запросу "<span class="text-danger">'.$search.'</span>" данных нет. Попробуйте изменить или сократить Ваш запрос.';
+        }else
+            $model = false;
+
+        $data['model'] = $model;
+        $this->render('search', $data);
+    }
+
+    public function test(){
+        /*foreach(Model::readAll('content') as $row){
+            echo strip_tags($row['text']);
+            Model::save('content', ['textnotag' => strip_tags($row['text'])], ['id' => $row['id']]);
+        }*/
+    }
 }

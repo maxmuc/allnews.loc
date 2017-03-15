@@ -1,4 +1,4 @@
-app.controller('appCtrl', ['$scope', '$interval', '$http', '$sce', function($scope, $interval, $http, $sce){
+app.controller('appCtrl', ['$scope', '$interval', '$http', '$sce', '$location', function($scope, $interval, $http, $sce, $location){
     $scope.http = $http;
     $scope.sce = $sce;
     /******************clock**********************/
@@ -7,6 +7,11 @@ app.controller('appCtrl', ['$scope', '$interval', '$http', '$sce', function($sco
         $scope.theTime = new Date().toLocaleTimeString();
     }, 1000);
     /*********************************************/
+    $scope.url = $location.url();
+    //log($location.url());
+    $scope.selectedUrl = function(url){
+        $scope.tmp = {url: url};
+    };
 }]);
 
 app.controller('menuIndCtrl', ['$scope', function($scope){
@@ -53,9 +58,6 @@ app.controller('menuIndCtrl', ['$scope', function($scope){
              $scope.sortingLog.push('Stop: ' + logEntry);*/
         }
     };
-
-
-
 
     $scope.update = function(item){
         log(item);

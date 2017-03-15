@@ -70,9 +70,9 @@
             </a>
         </td>
         <td style="vertical-align: middle; text-align: right;">
-            <form class="form-inline">
+            <form class="form-inline" action="/site/search">
                 <div class="form-group">
-                    <input class="form-control" placeholder="Поиск по сайту..." ng-model="arr.searchText" required>
+                    <input class="form-control" placeholder="Поиск по сайту..." name="search" required>
                 </div>
                 <button class="btn btn-default myBtnSearch" ng-click="search(arr.searchText)">Найти</button>
             </form>
@@ -94,25 +94,17 @@
                 </div>
 
                 <ul id="mainMenu">
-                    <li ng-repeat="item in arr.items | filter:{menuId:1}" ng-class="{'active':url == item.url}" ng-click="selectedUrl(item.url)">
-                        <a ng-href="{{tmp.url}}" ng-if="item.url=='/'?tmp.url='/':tmp.url='/site/section/'+item.url">{{item.name}}</a>
+                    <li ng-repeat="item in arr.items | filter:{menuId:1}" ng-class="{'active':arr.url == tmp.url}" ng-if="item.url=='/'?tmp.url='/':tmp.url='/site/section/'+item.url">
+                        <a ng-href="{{tmp.url}}">{{item.name}}</a>
                     </li>
-                    <!--<?php foreach(Model::readAll('items', ['where' => ['menuId' => 1]]) as $row): ?>
-                    <li>                        
-                        <a href="<?=$row['url']?>"><?=$row['name']?></a>
-                    </li>
-                    <?php endforeach; ?>-->
                 </ul>
 
                 <div style="padding: 0 4px;">
                     <div class="marquee">                    
 							<?php foreach(Model::readAll('content', ['where' => ['itemId' => 9], 'column' => ['title', 'url'], 'limit' => 5]) as $row): ?>                    	
-                        	<a href="<?=$row['url']?>"><?=$row['title']?></a>
-                    
+                        	<a href="/site/view/<?=$row['url']?>"><?=$row['title']?></a>
                     	<?php endforeach; ?>                    	
                     </div>
-                    	
-                      
                     <div style="float: right;"><?=allNewsTime()?> <span ng-bind="theTime"></span></div>
                 </div>
             </div>

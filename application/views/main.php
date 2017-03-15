@@ -28,17 +28,13 @@
 	<script src="/bower_components/angular-ui-sortable/sortable.min.js"></script>
 	<script src="/bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
 	<script src="/js/app/app.js"></script>
-	<script src="/js/app/ctrl.js"></script>	
-</script>
-
+	<script src="/js/app/ctrl.js"></script>
 </head>
 <body <?=isset($adminBar)?'style="margin-top: 28px;"':false?>>
 
 <?=isset($adminBar)?$adminBar:false?>
-
-<!--<div style="font-size: 70%; text-align: right;">Page rendered in <strong>{elapsed_time}</strong> seconds.</div>-->
-
-<div id="main" ng-init='arr.menu=<?=$menu?>; arr.items=<?=$items?>'>
+<?php $url = uri_string(); if($url == ''){$url = '/';}else{$url = '/'.$url;}?>
+<div id="main" ng-init='arr.menu=<?=$menu?>; arr.items=<?=$items?>; arr.url="<?=$url?>"'>
 
 	<div class="header"><?=$header?></div>
 
